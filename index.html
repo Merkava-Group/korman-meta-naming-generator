@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Korman Meta Creative Naming Convention Generator</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f0f4f8; min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding: 40px 20px; }
+    .card { background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); padding: 40px 44px 36px; width: 100%; max-width: 700px; }
+    .card header { margin-bottom: 32px; }
+    .card header h1 { font-size: 1.6rem; font-weight: 700; color: #1a202c; margin-bottom: 4px; }
+    .card header p { color: #718096; font-size: 0.95rem; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full-width { grid-column: 1 / -1; }
+    label { font-size: 0.82rem; font-weight: 600; color: #4a5568; text-transform: uppercase; letter-spacing: 0.06em; }
+    label span.col-badge { display: inline-block; background: #edf2ff; color: #4263eb; border-radius: 4px; padding: 1px 6px; font-size: 0.75rem; margin-right: 6px; font-weight: 700; }
+    select, input[type=text] { border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 10px 36px 10px 14px; font-size: 0.95rem; color: #2d3748; background: #f7fafc; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; -webkit-appearance: none; cursor: pointer; width: 100%; }
+    input[type=text] { padding-right: 14px; cursor: text; }
+    select:focus, input[type=text]:focus { outline: none; border-color: #4263eb; box-shadow: 0 0 0 3px rgba(66,99,235,0.12); background-color: #fff; }
+    select:hover, input[type=text]:hover { border-color: #a0aec0; }
+    .output-section { margin-top: 28px; padding-top: 24px; border-top: 1px solid #e2e8f0; }
+    .output-label { font-size: 0.82rem; font-weight: 600; color: #4a5568; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+    .output-box { background: #f0f4f8; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 14px 16px; font-family: 'Courier New', monospace; font-size: 0.9rem; color: #2d3748; word-break: break-all; min-height: 52px; line-height: 1.5; }
+    .output-box.has-value { background: #ebfbee; border-color: #51cf66; color: #1a7431; font-weight: 600; }
+    .output-box.incomplete { color: #a0aec0; font-style: italic; }
+    .btn-row { margin-top: 16px; display: flex; gap: 10px; }
+    .btn-copy { background: #4263eb; color: #fff; border: none; border-radius: 8px; padding: 10px 22px; font-size: 0.92rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .btn-copy:hover { background: #3b55d4; }
+    .btn-copy.copied { background: #37b24d; }
+    .btn-reset { background: transparent; color: #718096; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 10px 18px; font-size: 0.92rem; font-weight: 600; cursor: pointer; }
+    .btn-reset:hover { border-color: #a0aec0; color: #2d3748; }
+    .hint { font-size: 0.78rem; color: #a0aec0; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <header>
+      <h1>Korman Meta Creative Naming Convention Generator</h1>
+      <p>Select each field to auto-generate the standardized asset name.</p>
+    </header>
+    <div class="form-grid">
+      <div class="form-group">
+        <label><span class="col-badge">A</span>Date</label>
+        <select id="fd">
+          <option value="">— Select Month / Year —</option>
+          <option>01.2026_</option><option>02.2026_</option><option>03.2026_</option><option>04.2026_</option>
+          <option>05.2026_</option><option>06.2026_</option><option>07.2026_</option><option>08.2026_</option>
+          <option>09.2026_</option><option>10.2026_</option><option>11.2026_</option><option>12.2026_</option>
+          <option>01.2027_</option><option>02.2027_</option><option>03.2027_</option><option>04.2027_</option>
+          <option>05.2027_</option><option>06.2027_</option><option>07.2027_</option><option>08.2027_</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label><span class="col-badge">B</span>Service</label>
+        <select id="fs">
+          <option value="">— Select Service —</option>
+          <option>injectables_</option>
+          <option>coolsculpting_</option>
+          <option>lasers_</option>
+          <option>emsculpt_</option>
+          <option>morpheus8_</option>
+          <option>lasersskincare_</option>
+          <option>medspa_</option>
+          <option>surgical_</option>
+          <option>spravato_</option>
+          <option>ket_</option>
+          <option>waxing_</option>
+          <option>cooltone_</option>
+          <option>ed_</option>
+          <option>facelift_</option>
+          <option>neograft_</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label><span class="col-badge">C</span>Promo</label>
+        <select id="fp">
+          <option value="">— Select Promo —</option>
+          <option>perunit_</option>
+          <option>dollaroff_</option>
+          <option>dollaramount_</option>
+          <option>percentoff_</option>
+          <option>unlimited_</option>
+          <option>flatrate_</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label><span class="col-badge">D</span>Asset Type</label>
+        <select id="fat">
+          <option value="">— Select Asset Type —</option>
+          <option>video_</option>
+          <option>static_</option>
+        </select>
+      </div>
+      <div class="form-group full-width">
+        <label><span class="col-badge">E</span>Asset Type 2</label>
+        <select id="fat2">
+          <option value="">— Select Asset Type 2 —</option>
+          <option>patientandorprovider_</option>
+          <option>textonly_</option>
+          <option>productorservice_</option>
+          <option>educational_</option>
+          <option>testimonial_</option>
+          <option>office_</option>
+          <option>stockimage_</option>
+          <option>shortformreel_</option>
+        </select>
+      </div>
+      <div class="form-group full-width">
+        <label><span class="col-badge">F</span>Brief Description</label>
+        <input type="text" id="fdesc" placeholder="e.g. groupphoto, summerbodies, PatientProcedure..." />
+        <div class="hint">Free text — no spaces, keep it concise</div>
+      </div>
+    </div>
+    <div class="output-section">
+      <div class="output-label">Final Naming Convention</div>
+      <div class="output-box incomplete" id="out">Fill in the fields above to generate the name...</div>
+      <div class="btn-row">
+        <button class="btn-copy" id="bcopy" onclick="doCopy()">Copy to Clipboard</button>
+        <button class="btn-reset" onclick="doReset()">Reset</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    ['fd','fs','fp','fat','fat2','fdesc'].forEach(function(id){
+      document.getElementById(id).addEventListener('change',upd);
+      document.getElementById(id).addEventListener('input',upd);
+    });
+    function upd(){
+      var d=document.getElementById('fd').value,
+          s=document.getElementById('fs').value,
+          p=document.getElementById('fp').value,
+          a=document.getElementById('fat').value,
+          a2=document.getElementById('fat2').value,
+          f=document.getElementById('fdesc').value.trim();
+      var box=document.getElementById('out');
+      if(!d&&!s&&!p&&!a&&!a2&&!f){
+        box.textContent='Fill in the fields above to generate the name...';
+        box.className='output-box incomplete';
+        return;
+      }
+      var res=[d,s,p,a,a2].filter(Boolean).join('')+f;
+      box.textContent=res;
+      box.className='output-box'+(d&&s&&p&&a&&a2?' has-value':'');
+    }
+    function doCopy(){
+      var box=document.getElementById('out');
+      if(box.classList.contains('incomplete'))return;
+      navigator.clipboard.writeText(box.textContent).then(function(){
+        var btn=document.getElementById('bcopy');
+        btn.classList.add('copied');btn.textContent='Copied!';
+        setTimeout(function(){btn.classList.remove('copied');btn.textContent='Copy to Clipboard';},2000);
+      });
+    }
+    function doReset(){
+      ['fd','fs','fp','fat','fat2','fdesc'].forEach(function(id){
+        document.getElementById(id).value='';
+      });
+      upd();
+    }
+  </script>
+</body>
+</html>
