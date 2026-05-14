@@ -32,6 +32,7 @@
     .btn-reset { background: transparent; color: #718096; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 10px 18px; font-size: 0.92rem; font-weight: 600; cursor: pointer; }
     .btn-reset:hover { border-color: #a0aec0; color: #2d3748; }
     .hint { font-size: 0.78rem; color: #a0aec0; margin-top: 4px; }
+    .fixed-value { border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 10px 14px; font-size: 0.95rem; color: #2d3748; background: #edf2ff; font-weight: 600; letter-spacing: 0.02em; }
   </style>
 </head>
 <body>
@@ -42,75 +43,353 @@
     </header>
     <div class="form-grid">
       <div class="form-group">
-        <label><span class="col-badge">A</span>Date</label>
-        <select id="fd">
-          <option value="">— Select Month / Year —</option>
-          <option>01.2026_</option><option>02.2026_</option><option>03.2026_</option><option>04.2026_</option>
-          <option>05.2026_</option><option>06.2026_</option><option>07.2026_</option><option>08.2026_</option>
-          <option>09.2026_</option><option>10.2026_</option><option>11.2026_</option><option>12.2026_</option>
-          <option>01.2027_</option><option>02.2027_</option><option>03.2027_</option><option>04.2027_</option>
-          <option>05.2027_</option><option>06.2027_</option><option>07.2027_</option><option>08.2027_</option>
-        </select>
+        <label><span class="col-badge">A</span>Client</label>
+        <div class="fixed-value">KORMAN</div>
       </div>
       <div class="form-group">
-        <label><span class="col-badge">B</span>Service</label>
-        <select id="fs">
-          <option value="">— Select Service —</option>
-          <option>injectables_</option>
-          <option>coolsculpting_</option>
-          <option>lasers_</option>
-          <option>emsculpt_</option>
-          <option>morpheus8_</option>
-          <option>lasersskincare_</option>
-          <option>medspa_</option>
-          <option>surgical_</option>
-          <option>spravato_</option>
-          <option>ket_</option>
-          <option>waxing_</option>
-          <option>cooltone_</option>
-          <option>ed_</option>
-          <option>facelift_</option>
-          <option>neograft_</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label><span class="col-badge">C</span>Promo</label>
-        <select id="fp">
-          <option value="">— Select Promo —</option>
-          <option>perunit_</option>
-          <option>dollaroff_</option>
-          <option>dollaramount_</option>
-          <option>percentoff_</option>
-          <option>unlimited_</option>
-          <option>flatrate_</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label><span class="col-badge">D</span>Asset Type</label>
-        <select id="fat">
-          <option value="">— Select Asset Type —</option>
-          <option>video_</option>
-          <option>static_</option>
-        </select>
-      </div>
-      <div class="form-group full-width">
-        <label><span class="col-badge">E</span>Asset Type 2</label>
-        <select id="fat2">
-          <option value="">— Select Asset Type 2 —</option>
-          <option>patientandorprovider_</option>
-          <option>textonly_</option>
-          <option>productorservice_</option>
-          <option>educational_</option>
-          <option>testimonial_</option>
-          <option>office_</option>
-          <option>stockimage_</option>
-          <option>shortformreel_</option>
-        </select>
-      </div>
-      <div class="form-group full-width">
-        <label><span class="col-badge">F</span>Brief Description</label>
-        <input type="text" id="fdesc" placeholder="e.g. groupphoto, summerbodies, PatientProcedure..." />
+        <label><span class="col-badge">B</span>Adname</label>
+        <input type="text" id="fs" placeholder="e.g. SummerPackage, Amanda" />
         <div class="hint">Free text — no spaces, keep it concise</div>
+      </div>
+      <div class="form-group">
+        <label><span class="col-badge">C</span>Intent</label>
+        <select id="fp">
+          <option value="">— Select Intent —</option>
+          <option>HighIntent_</option>
+          <option>LowIntent_</option>
+        </select>
+        <div class="hint">Meta should be LowIntent unless it's retargeting only.</div>
+      </div>
+      <div class="form-group">
+        <label><span class="col-badge">D</span>Format</label>
+        <select id="fat">
+          <option value="">— Select Format —</option>
+          <option>Static_</option>
+          <option>Video_</option>
+          <option>Carousel_</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label><span class="col-badge">E</span>Campaign Objective</label>
+        <select id="fat2">
+          <option value="">— Select Campaign Objective —</option>
+          <option>Awareness_</option>
+          <option>Event_</option>
+          <option>PromoGeneral_</option>
+          <option>PromoService_</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label><span class="col-badge">F</span>Launch Date</label>
+        <select id="fdesc">
+          <option value="">— Select Launch Date —</option>
+          <option>20260101</option>
+          <option>20260201</option>
+          <option>20260301</option>
+          <option>20260401</option>
+          <option>20260501</option>
+          <option>20260601</option>
+          <option>20260701</option>
+          <option>20260801</option>
+          <option>20260901</option>
+          <option>20261001</option>
+          <option>20261101</option>
+          <option>20261201</option>
+          <option>20270101</option>
+          <option>20270201</option>
+          <option>20270301</option>
+          <option>20270401</option>
+          <option>20270501</option>
+          <option>20270601</option>
+          <option>20270701</option>
+          <option>20270801</option>
+          <option>20270901</option>
+          <option>20271001</option>
+          <option>20271101</option>
+          <option>20271201</option>
+          <option>20280101</option>
+          <option>20280201</option>
+          <option>20280301</option>
+          <option>20280401</option>
+          <option>20280501</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label><span class="col-badge">G</span>Service Category</label>
+        <select id="fcat">
+          <option value="">— Select Service Category —</option>
+          <option>AllServices</option>
+          <option>Retail</option>
+          <option>EnergyDevices</option>
+          <option>Injectables</option>
+          <option>Wellness</option>
+          <option>Surgical</option>
+          <option>SpaServices</option>
+          <option>NoServices</option>
+        </select>
+        <div class="hint">See the <a href="https://docs.google.com/spreadsheets/d/1rxBHYDwplO45qBBtjRqJHsb3qU6zf1C_qo7D2n76UdY/edit?usp=sharing" target="_blank" rel="noopener">Naming Conventions key</a> to determine the correct category.</div>
+      </div>
+      <div class="form-group">
+        <label><span class="col-badge">H</span>Service Name</label>
+        <select id="fserv">
+          <option value="">— Select Service Name —</option>
+          <option>Acclaro</option>
+          <option>Accure</option>
+          <option>Accutfit</option>
+          <option>AccuTite</option>
+          <option>Acleara</option>
+          <option>ActivePeel</option>
+          <option>AlluraLipo</option>
+          <option>AquaGlow</option>
+          <option>Aquagold</option>
+          <option>AviClear</option>
+          <option>B12</option>
+          <option>BasicFacial</option>
+          <option>BBL</option>
+          <option>Bellafill</option>
+          <option>Belotero</option>
+          <option>BioPeel</option>
+          <option>Blepharoplasty</option>
+          <option>BlueLight</option>
+          <option>BodyFX</option>
+          <option>BodyTite</option>
+          <option>Botox</option>
+          <option>BreastAugmentation</option>
+          <option>BreastLift</option>
+          <option>BrowLift</option>
+          <option>BuildMyHealth</option>
+          <option>Cellfina</option>
+          <option>Cheeks</option>
+          <option>ChemicalPeel</option>
+          <option>Chemodenervation</option>
+          <option>Clear&amp;Brilliant</option>
+          <option>ClearLift</option>
+          <option>ClearRF</option>
+          <option>ClearSilk</option>
+          <option>CO2</option>
+          <option>ComboPeel</option>
+          <option>Consultation</option>
+          <option>CoolMini</option>
+          <option>CoolSculpting</option>
+          <option>CoolSmooth</option>
+          <option>CoolTone</option>
+          <option>CustomPeel</option>
+          <option>Daxxify</option>
+          <option>Defyne</option>
+          <option>Dermal</option>
+          <option>Dermaplane</option>
+          <option>Dermasweep</option>
+          <option>Dexascan</option>
+          <option>DiamondGlow</option>
+          <option>Diva</option>
+          <option>EarPiercing</option>
+          <option>Ellacor</option>
+          <option>Emface</option>
+          <option>Emsculpt</option>
+          <option>EmsculptNeo</option>
+          <option>Emsella</option>
+          <option>Emtone</option>
+          <option>Erbium</option>
+          <option>Evolve</option>
+          <option>ExcelV</option>
+          <option>Exilis</option>
+          <option>Exion</option>
+          <option>Exosome</option>
+          <option>Facelift</option>
+          <option>FaceTite</option>
+          <option>FemTouch</option>
+          <option>FermiWave</option>
+          <option>FillerDissolver</option>
+          <option>Fire&amp;IceFacial</option>
+          <option>Forma</option>
+          <option>Fractional</option>
+          <option>Fractora</option>
+          <option>Fraxel</option>
+          <option>G-Shot</option>
+          <option>Gainswave</option>
+          <option>Geneo</option>
+          <option>Genius</option>
+          <option>Glo2</option>
+          <option>GLP</option>
+          <option>Glutathione</option>
+          <option>GummySmile</option>
+          <option>Halo</option>
+          <option>HRT</option>
+          <option>Hyaluronidase</option>
+          <option>Hydrafacial</option>
+          <option>HydraGlow</option>
+          <option>Hydroinjection</option>
+          <option>Hylenex</option>
+          <option>Illuminize</option>
+          <option>Indiba</option>
+          <option>Infra-Orbital</option>
+          <option>Injectable</option>
+          <option>IVTherapy</option>
+          <option>Jessner</option>
+          <option>Juvederm</option>
+          <option>Kysse</option>
+          <option>Lamination</option>
+          <option>LaserCap</option>
+          <option>LaserSkinResurfacing</option>
+          <option>LashExtensions</option>
+          <option>LashLift</option>
+          <option>LashTint</option>
+          <option>LED</option>
+          <option>LegendPro</option>
+          <option>LHR</option>
+          <option>Limelight</option>
+          <option>LipFlip</option>
+          <option>LiquidLipo</option>
+          <option>Lumecca</option>
+          <option>Lyft</option>
+          <option>MedicalFacial</option>
+          <option>MemberFacial</option>
+          <option>Microchanneling</option>
+          <option>Microcoring</option>
+          <option>Microdermabrasion/Dermasweep</option>
+          <option>MicrolaserPeel</option>
+          <option>Microneedling</option>
+          <option>Micropen</option>
+          <option>Microtox</option>
+          <option>MiniFacial</option>
+          <option>MiraDry</option>
+          <option>Morpheus</option>
+          <option>Moxi</option>
+          <option>MultiService</option>
+          <option>NA</option>
+          <option>NAD+</option>
+          <option>NatureThroid</option>
+          <option>NeoGen</option>
+          <option>Neurotoxin</option>
+          <option>NuEra</option>
+          <option>O-Shot</option>
+          <option>OxygenFacial</option>
+          <option>P-Shot</option>
+          <option>PCAPeel</option>
+          <option>PDGF</option>
+          <option>Pellet</option>
+          <option>Pelleve</option>
+          <option>PerfectPeel</option>
+          <option>Perioral</option>
+          <option>PermanentCosmetics</option>
+          <option>PermeaLaser</option>
+          <option>Phototherapy</option>
+          <option>PicoLaser</option>
+          <option>Picosure</option>
+          <option>PicoWay</option>
+          <option>PlatinumFacial</option>
+          <option>PlatysmaBand</option>
+          <option>PMMA</option>
+          <option>Potenza</option>
+          <option>PRF</option>
+          <option>Progesterone</option>
+          <option>PRP</option>
+          <option>PRX</option>
+          <option>PurePRP</option>
+          <option>Radiesse</option>
+          <option>RedCarpetFacial</option>
+          <option>RedLight</option>
+          <option>Refyne</option>
+          <option>Rejuvenize</option>
+          <option>Renuva</option>
+          <option>Renuvion</option>
+          <option>Restylane</option>
+          <option>Revlite</option>
+          <option>RFMicroneedling</option>
+          <option>Saxenda</option>
+          <option>Scarlet</option>
+          <option>ScarReduction</option>
+          <option>ScarRevision</option>
+          <option>Sculptra</option>
+          <option>SecretRF</option>
+          <option>Semaglutide</option>
+          <option>ShockwaveTherapy</option>
+          <option>SignatureFacial</option>
+          <option>SilkPeel</option>
+          <option>SkinPen</option>
+          <option>Sofwave</option>
+          <option>Spectra</option>
+          <option>SprayTan</option>
+          <option>StemCell</option>
+          <option>Surgery</option>
+          <option>Sylfirm</option>
+          <option>Tattooing</option>
+          <option>TCA</option>
+          <option>TearTrough</option>
+          <option>Testosterone</option>
+          <option>Thermage</option>
+          <option>ThermiSmooth</option>
+          <option>ThermiVa</option>
+          <option>Threads</option>
+          <option>Thulium</option>
+          <option>Tixel</option>
+          <option>TribridHALO</option>
+          <option>TRT</option>
+          <option>TruSculpt</option>
+          <option>TummyTuck</option>
+          <option>Ulthera</option>
+          <option>Ultherapy</option>
+          <option>UltraFemme</option>
+          <option>VampireFacial</option>
+          <option>Vanquish</option>
+          <option>VenusLegacy</option>
+          <option>VIPeel</option>
+          <option>VitalizeFacial</option>
+          <option>Vitrase</option>
+          <option>Vivace</option>
+          <option>Volbella</option>
+          <option>Vollure</option>
+          <option>Voluma</option>
+          <option>Volux</option>
+          <option>Votiva</option>
+          <option>Vtone</option>
+          <option>Wax</option>
+          <option>WeightLoss</option>
+          <option>Xact</option>
+          <option>Zwave</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label><span class="col-badge">I</span>Discount</label>
+        <select id="fdisc">
+          <option value="">— Select Discount —</option>
+          <option>Percent5Off</option>
+          <option>Percent10Off</option>
+          <option>Percent20Off</option>
+          <option>Percent25Off</option>
+          <option>Percent30Off</option>
+          <option>Percent40Off</option>
+          <option>Percent50Off</option>
+          <option>Save10</option>
+          <option>Save20</option>
+          <option>Save25</option>
+          <option>Save50</option>
+          <option>Save75</option>
+          <option>Save100</option>
+          <option>Save150</option>
+          <option>Save200</option>
+          <option>Save250</option>
+          <option>Save500</option>
+          <option>Buy1Get1</option>
+          <option>Buy2Get1</option>
+          <option>Buy2Get2</option>
+          <option>Buy3Get2</option>
+          <option>FreeAddOn</option>
+          <option>FreeTreatment</option>
+          <option>FreeConsult</option>
+          <option>GiftWithPurchase</option>
+          <option>Spend100Save20</option>
+          <option>Spend200Save50</option>
+          <option>Spend300Save100</option>
+          <option>Spend500Save100</option>
+          <option>MultiDiscount</option>
+          <option>NoDiscount</option>
+          <option>ReducedPrice</option>
+          <option>Package</option>
+          <option>Giveaway</option>
+          <option value="__other__">Other (specify)</option>
+        </select>
+        <input type="text" id="fdiscOther" placeholder="Enter custom discount (no spaces)" style="display:none; margin-top:8px;" />
       </div>
     </div>
     <div class="output-section">
@@ -123,26 +402,38 @@
     </div>
   </div>
   <script>
-    ['fd','fs','fp','fat','fat2','fdesc'].forEach(function(id){
+    var CLIENT='KORMAN_';
+    ['fs','fp','fat','fat2','fdesc','fcat','fserv','fdisc','fdiscOther'].forEach(function(id){
       document.getElementById(id).addEventListener('change',upd);
       document.getElementById(id).addEventListener('input',upd);
     });
     function upd(){
-      var d=document.getElementById('fd').value,
-          s=document.getElementById('fs').value,
+      var d=CLIENT,
+          s_raw=document.getElementById('fs').value.trim(),
+          s=s_raw?s_raw+'_':'',
           p=document.getElementById('fp').value,
           a=document.getElementById('fat').value,
           a2=document.getElementById('fat2').value,
-          f=document.getElementById('fdesc').value.trim();
+          f_raw=document.getElementById('fdesc').value,
+          f=f_raw?f_raw+'_':'',
+          g_raw=document.getElementById('fcat').value,
+          g=g_raw?g_raw+'_':'',
+          h_raw=document.getElementById('fserv').value,
+          h=h_raw?h_raw+'_':'',
+          discSel=document.getElementById('fdisc').value,
+          discOther=document.getElementById('fdiscOther');
+      // Show/hide the custom-discount text input based on the dropdown
+      discOther.style.display=(discSel==='__other__')?'block':'none';
+      var i=(discSel==='__other__')?discOther.value.trim():discSel;
       var box=document.getElementById('out');
-      if(!d&&!s&&!p&&!a&&!a2&&!f){
+      if(!s&&!p&&!a&&!a2&&!f&&!g&&!h&&!i){
         box.textContent='Fill in the fields above to generate the name...';
         box.className='output-box incomplete';
         return;
       }
-      var res=[d,s,p,a,a2].filter(Boolean).join('')+f;
+      var res=[d,s,p,a,a2,f,g,h].filter(Boolean).join('')+i;
       box.textContent=res;
-      box.className='output-box'+(d&&s&&p&&a&&a2?' has-value':'');
+      box.className='output-box'+(s&&p&&a&&a2&&f&&g&&h&&i?' has-value':'');
     }
     function doCopy(){
       var box=document.getElementById('out');
@@ -154,9 +445,10 @@
       });
     }
     function doReset(){
-      ['fd','fs','fp','fat','fat2','fdesc'].forEach(function(id){
+      ['fs','fp','fat','fat2','fdesc','fcat','fserv','fdisc','fdiscOther'].forEach(function(id){
         document.getElementById(id).value='';
       });
+      document.getElementById('fdiscOther').style.display='none';
       upd();
     }
   </script>
